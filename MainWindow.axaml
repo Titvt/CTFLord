@@ -1,0 +1,30 @@
+<Window
+    Background="#CCFFFFFF"
+    ExtendClientAreaToDecorationsHint="True"
+    Title="CTFLord"
+    TransparencyLevelHint="AcrylicBlur"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d"
+    x:Class="CTFLord.MainWindow"
+    x:DataType="ctfLord:MainWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:ctfLord="clr-namespace:CTFLord"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.Styles>
+        <Style Selector="Grid.Maximized">
+            <Setter Property="Margin" Value="8,13" />
+        </Style>
+        <Style Selector="Grid.NotMaximized">
+            <Setter Property="Margin" Value="1,6" />
+        </Style>
+    </Window.Styles>
+    <Grid
+        Classes.Maximized="{Binding Maximized}"
+        Classes.NotMaximized="{Binding !Maximized}"
+        RowDefinitions="17,*">
+        <Menu Grid.Row="0" HorizontalAlignment="Left" />
+        <TabControl Grid.Row="1" Margin="0,7,0,0" />
+    </Grid>
+</Window>
